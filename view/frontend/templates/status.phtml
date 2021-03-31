@@ -1,0 +1,22 @@
+<?php /** @var \Icreative\CustomerStatus\Block\Status $block */ ?>
+
+<?php
+$customer = $block->getCustomer();
+$status = $customer ? $customer->getCustomAttribute('customer_status') : '';
+?>
+
+<form class="form form-edit-account" action="<?= $block->escapeUrl($block->getUrl('customer/account/statusPost')) ?>"
+      method="post" id="form-validate" data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+      autocomplete="off">
+    <fieldset class="fieldset status">
+        <input type="text" name="customer_status"
+               value="<?= $status ? $status->getValue() : '' ?>"/>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action save primary" title="<?= $block->escapeHtmlAttr(__('Save')) ?>">
+                <span><?= $block->escapeHtml(__('Save')) ?></span></button>
+        </div>
+    </div>
+    <?= $block->getBlockHtml('formkey') ?>
+</form>

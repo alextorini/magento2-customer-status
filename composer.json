@@ -1,0 +1,20 @@
+{
+    "name": "icreative/customer-status",
+    "description": "Add customer status",
+    "require": {
+        "php": "~7.2.4",
+        "magento/framework": "*",
+        "magento/module-customer": "*",
+        "psr/log": "*"
+    },
+    "type": "magento2-module",
+    "version": "0.0.1",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Icreative\\CustomerStatus\\": ""
+        }
+    }
+}

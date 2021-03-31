@@ -1,0 +1,18 @@
+<li class="customer-status" data-bind="scope: 'customer'">
+    <!-- ko if: customer().status -->
+    <span class="customer-status" data-bind="text: customer().status"> </span>
+    <!-- /ko -->
+</li>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "customer": {
+                        "component": "Magento_Customer/js/view/customer"
+                    }
+                }
+            }
+        }
+    }
+</script>
